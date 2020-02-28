@@ -20,4 +20,6 @@ def reduce(source, starting_point = nil)
   while i < source.length
     total = yield(total, source[i])
     i += 1
+  end
+total
 end
