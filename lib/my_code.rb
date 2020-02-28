@@ -9,10 +9,15 @@ def map(source)
 end
 
 def reduce(source, starting_point = nil)
-  total = 0
   if starting_point
     total = starting_point
     i = 0
+  else
+    total = source[0]
+    i = 1
   end
 
+  while i < source.length
+    total = yield(total, source[i])
+    i += 1
 end
